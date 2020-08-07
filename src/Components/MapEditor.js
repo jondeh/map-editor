@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../SCSS/MapEditor.scss';
 import {terrains} from '../terrain';
-import {tileVariables} from '../tileVariables';
+import {terrain2} from '../terrain2';
 import MeMap from './MeMap';
 
 const MapEditor = () => {
@@ -13,6 +13,7 @@ const MapEditor = () => {
     const [terrain, setTerrain] = useState(terrains)
     const [current, setCurrent] = useState(null)
     const [changes, setChanges] = useState([])
+    const [allTerrains, setAllTerrains] = useState([terrains, terrain2])
 
     const handleSubmit = () => {
         setGrid(() => {
@@ -54,27 +55,37 @@ const MapEditor = () => {
         })
     }
 
-    // console.log("current", current)
+    console.log("terrain", terrain)
     return (
         <div className="map-editor-container">
-            <div className="me-header">
+            <div className="terrain-menu-top">
+                <h3>Terrain</h3>
                 <div className="terrain-menu">
                     {
-                        terrain.map((e,i) => {
-                            return <div className="terrain" key={i} style={{background: e.color}} onClick={() => setCurrent(e.color)}>
-                            </div>
-                        })
-                    }
+                    terrain.map((e,i) => {
+                        return <div className="terrain" key={i} style={{background: e.color}} onClick={() => setCurrent(e.color)}>
+                        </div>
+                    })
+                }
                 </div>
-            <input type="number" placeholder="Height" 
-            onChange={(e) => setHeight(e.target.value)} />
-            <input type="number" placeholder="Width" onChange={(e) => setWidth(e.target.value)} />
-            <button onClick={handleSubmit}>SUBMIT</button>
+                <div className="all-terrains-container">
+                    {allTerrains.map((e,i) => {
+                        return <div className="all-terrain-square" key={i} onClick={() => setTerrain(allTerrains[i])}></div>
+                    })}
+                </div>
             </div>
-            <div className="me-body">
-                {
-                grid && <MeMap {...{grid, gridStyle, current, handleTileClick}}/>
-                }   
+            <div className="main-container">
+                <div className="me-header">
+                <input type="number" placeholder="Height" 
+                onChange={(e) => setHeight(e.target.value)} />
+                <input type="number" placeholder="Width" onChange={(e) => setWidth(e.target.value)} />
+                <button onClick={handleSubmit}>SUBMIT</button>
+                </div>
+                <div className="me-body">
+                    {
+                    grid && <MeMap {...{grid, gridStyle, current, handleTileClick}}/>
+                    }   
+                </div>
             </div>
             <div className="me-footer">
                 <button onClick={handleSave}>SAVE</button>

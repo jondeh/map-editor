@@ -1,39 +1,79 @@
 .map-editor-container {
-    padding-top: 50px;
+    // padding-top: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // border: 1px solid red;
+    height: 100%;
     input {
         text-align: center;
     }
 }
 
-.me-header {
-    margin-bottom: 50px;
+.terrain-menu-top {
+    padding: 5px 0px;
+    height: 93.5%;
+    width: 300px;
+    border: 1px solid black;
+    background: #343a40;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+    color: white;
+    position: relative;
 }
 
 .terrain-menu {
-    height: 75px;
-    width: 400px;
-    border: 1px solid black;
-    margin-right: 50px;
-    display: flex;
+    position: relative;
+    border: 1px solid white;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 12%);
+    // grid-template-rows: repeat(10, 12%);
     justify-content: space-evenly;
-    align-items: center;
-    background: #343a40;
+    // align-items: center;
+    padding: 5px 0px;
 }
+
+.me-header {
+    margin-bottom: 50px;
+    display: flex;
+    margin-left: 200px;
+}
+
 
 .terrain {
     height: 35px;
     width: 35px;
     border: 1px solid rgb(94, 106, 119);
-    border-radius: 50%;
+    // border-radius: 50%;
+}
+
+.all-terrains-container {
+    position: absolute;
+    border: 1px solid white;
+    height: 100px;
+    width: 100%;
+    bottom: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    div {
+        border-radius: 50%;
+        border: 1px solid white;
+        height: 75px;
+        width: 75px;
+    }
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .grid-container {
-    border: 1px solid green;
     display: grid;
     // grid-template-columns: repeat(2, )
 }
@@ -49,6 +89,7 @@
 }
 
 .me-footer {
+    background: black;
     position: absolute;
     bottom: 25px;
 }

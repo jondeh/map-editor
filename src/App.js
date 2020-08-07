@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import './App.css';
+import './SCSS/MapEditor.scss';
+import './SCSS/App.scss';
 
 // Components
 import SavedMaps from './Components/SavedMaps';
 import Navbar from './Components/Navbar';
 import MapEditor from './Components/MapEditor';
-
 
 function App() {
   return (

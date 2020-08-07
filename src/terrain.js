@@ -12,8 +12,24 @@ export const terrains = [
         color: "linear-gradient(to top, saddlebrown,saddlebrown,tan,white)",
     },
     {
-        type: "start",
-        color: "radial-gradient(black,grey,white)"
+        type: "pushable",
+        color: "radial-gradient(lightgrey,grey,black)"
+    },
+    {
+        type: "water",
+        color: "blue"
+    },
+    {
+        type: "lava",
+        color: "red"
+    },
+    {
+        type: "quicksand",
+        color: "sandybrown"
+    },
+    {
+        type: "uneven",
+        color: "linear-gradient(black,white,black,white,black,white"
     },
     {
         type: "treasure",
@@ -31,4 +47,8 @@ export const terrains = [
         type: "door",
         color: "brown",
     },
+    {
+        type: "empty",
+        color: "white"
+    }
 ]

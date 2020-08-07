@@ -14,40 +14,33 @@ const SavedMaps = () => {
             if(res.data.length > 1){
                 console.log("res.data", res.data[res.data.length-1].map)
                 setMaps(res.data)
-                setGrid(res.data[res.data.length-1].map)
-                setGridStyle(res.data[res.data.length-1].style)
+                // setGrid(res.data[res.data.length-1].map)
+                // setGridStyle(res.data[res.data.length-1].style)
             }
         })
     }, [])
 
+
     let newMap = grid && grid.map((e,i) => e.map((f,j) => {
-        return <MeTile mapColor={f.color} />
+        return <MeTile tileColor={f.color} key={j} grid={grid} />
     }))
 
     const handleNewMap = (i) => {
         let myMap = maps[i].map
         let myStyle = maps[i].style
-        setGrid(myMap)
         setGridStyle(myStyle)
+        setGrid(myMap)
     }
 
-
-
-
-    // let newMap = grid && grid.map((e,i) => {
-    //     return <div className="map-row" key={i}>
-    //         {
-    //             e.map((f,j) => {
-    //                 return <div key={j} className="tile"></div>
-    //             })
-    //         }
-    //     </div>
-    // })
         let mapsDivs = maps && maps.map((e,i) => {
             return <div className="map-picker-div" key={i} onClick={() => handleNewMap(i)}>
                 <h3>{e._id}</h3>
             </div>
         })
+
+
+        console.log("grid", grid)
+        console.log("gridStyle", gridStyle)
     return (
         <div className="map-component-container">
                 <header>Saved Maps</header>
