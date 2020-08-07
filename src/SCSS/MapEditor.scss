@@ -1,0 +1,54 @@
+.map-editor-container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input {
+        text-align: center;
+    }
+}
+
+.me-header {
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.terrain-menu {
+    height: 75px;
+    width: 400px;
+    border: 1px solid black;
+    margin-right: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #343a40;
+}
+
+.terrain {
+    height: 35px;
+    width: 35px;
+    border: 1px solid rgb(94, 106, 119);
+    border-radius: 50%;
+}
+
+.grid-container {
+    border: 1px solid green;
+    display: grid;
+    // grid-template-columns: repeat(2, )
+}
+
+.me-tile {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    div {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.me-footer {
+    position: absolute;
+    bottom: 25px;
+}

@@ -1,0 +1,33 @@
+.map-component-container {
+    height: 100%;
+    width: 100%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    header {
+        text-align: center;
+        font-weight: bold;
+        font-size: 35px;
+        border-bottom: 6px double black;
+        margin-bottom: 15px;
+    }
+}
+
+.map-picker {
+    border: 1px solid black;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(auto, 10%);
+}
+
+.map-picker-div {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
